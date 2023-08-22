@@ -1,4 +1,4 @@
-// A google scripts that takes advantage of embeddings and sentiment analysis to add labels to mails
+// A google script that takes advantage of embeddings and sentiment analysis to add labels to mails
 function myFunction() {
   // Labels and list of templates that should be labelled if similar
   const labelLib = {
@@ -121,10 +121,10 @@ function myFunction() {
   // :chunkLength int: How long a chunk of text for embedding should be
   // :overlap int: Overlap between previous chunk of text and current
   // :threshold int: How similar a chunk should be to the label before assigning a label
-  const messageLimit = 5; 
+  const messageLimit = 20; 
   const chunkLength = 480;
   const overlap = 10;
-  const threshold = 0.85;
+  const threshold = 0.65;
 
   // Create labels if they don't exist and exclude them from search query
   let excludeTags = "";
@@ -197,7 +197,7 @@ function myFunction() {
     }
   }
 
-  // Get top (messageLimit / {5}) threads
+  // Get top (messageLimit / {20}) threads
   const threads = GmailApp.search('has:nouserlabels -in:draft' + excludeTags,0, messageLimit);
   let messageEmbeddings;
 
@@ -212,7 +212,7 @@ function myFunction() {
             const similarity = dotProduct(chunkEmbedding, demoEmbedding);
             if(similarity >= threshold){
               // Add tag to thread
-              // thread.addLabel(GmailApp.getUserLabelByName(label));
+              thread.addLabel(GmailApp.getUserLabelByName(label));
               console.log(label + " has been added to thread")
               break;
             }
