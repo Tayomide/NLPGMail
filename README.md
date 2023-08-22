@@ -13,6 +13,10 @@ Forms of genres can be seen all around us, from tags to labels. I believe the ab
 - The ```server``` folder is my node.js server that deals with the cleaning up, chunking, and embedding of Gmail messages
 - The ```Code.gs``` contains a function that works. Although it is a proof of concept. (I plan on adding more functions in the future, but you are welcome to fork or copy this code and create a pull request with your functions
 
+# Before/After
+![Before Script Image](https://github.com/Tayomide/NLPGMail/blob/main/assets/images/before-script.png)
+![After Script Image](https://github.com/Tayomide/NLPGMail/blob/main/assets/images/after-script.png)
+
 # Plans for the future
 This project is a step toward integrating NLP and language theory using existing technologies in the real world. I would love to see the extremes this project could be pushed to and hopefully collaborate with like-minded people.
 1. Add more Google Scripts function.
