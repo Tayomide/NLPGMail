@@ -17,9 +17,21 @@ Forms of genres can be seen all around us, from tags to labels. I believe the ab
 ![Before Script Image](https://github.com/Tayomide/NLPGMail/blob/main/assets/images/before-script.png)
 ![After Script Image](https://github.com/Tayomide/NLPGMail/blob/main/assets/images/after-script.png)
 
+## Note
+I added "blackboard" to the search query to ensure the script matches with emails that are likely to be from Blackboard.
+
+# Steps to reproduce
+
+
+# Optimization
+There are several ways to optimize this script. Some of which I plan to implement in the future.
+- You can add more templates. The more templates, the less likely it is to miss a mail.
+- You could break out of the for loops when one label has been assigned. In most use cases one label is more than enough for a thread.
+- You could reduce the threshold to increase the likelihood of labeling your mail and getting out of the loop. Although this may lead to unrelated emails being labeled if the threshold is too low. The threshold is currently at 0.65.
+
 # Plans for the future
 This project is a step toward integrating NLP and language theory using existing technologies in the real world. I would love to see the extremes this project could be pushed to and hopefully collaborate with like-minded people.
-1. Add more Google Scripts function.
+1. Add more Google Scripts functions.
 2. Use a better embedding model based on the MTEB English leaderboard.
 3. Test scripts in various real-world scenarios and see their performance.
 4. Add documentation for anyone to use both scripts and server.
