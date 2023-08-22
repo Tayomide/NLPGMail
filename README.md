@@ -9,11 +9,11 @@ This is a one-day project I created to serve as a proof of concept of an idea I 
 
 # Structure
 - The server folder is my node.js server that deals with the cleaning up, chunking, and embedding of Gmail messages
-- The Code.gs contains a function that works only as a proof of concept. (I plan on adding more functions in the future, but you are welcome to fork or copy this code and send a pull request with your functions
+- The Code.gs contains a function that works. Although it is a proof of concept. (I plan on adding more functions in the future, but you are welcome to fork or copy this code and create a pull request with your functions
 
 # Plans for the future
 This project is a step toward integrating NLP and language theory using existing technologies in the real world. I would love to see the extremes this project could be pushed to and hopefully collaborate with like-minded people.
-1. Add more Google scripts function.
+1. Add more Google Scripts function.
 2. Use a better embedding model based on the MTEB English leaderboard.
 3. Test scripts in various real-world scenarios and see their performance.
 4. Add documentation for anyone to use both scripts and server.
