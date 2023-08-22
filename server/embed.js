@@ -4,32 +4,32 @@ const htp = require('html2plaintext');
 // Function for splitting text into chunks with some overlap
 const sliding_window = (text, chunkLength, overlap) => {
   // I splitted by words. Does anyone know how to split by token?
-  const textList = text.replace(/\/[rs]/g, ' ').replace(/\s+/g, ' ').split(" ")
-  const chunks = []
+  const textList = text.replace(/\/[rs]/g, ' ').replace(/\s+/g, ' ').split(" ");
+  const chunks = [];
 
-  let startIdx = overlap
+  let startIdx = overlap;
   while(startIdx === overlap || startIdx < textList.length){
-    startIdx -= overlap
-    chunks.push(textList.slice(startIdx, startIdx + chunkLength).join(" "))
-    startIdx += chunkLength
+    startIdx -= overlap;
+    chunks.push(textList.slice(startIdx, startIdx + chunkLength).join(" "));
+    startIdx += chunkLength;
   }
-  return chunks
+  return chunks;
 }
 
 // Main function
 const embed = async (req, res) => {
   // Get parameters
-  let { text, chunkLength, overlap } = req.body
+  let { text, chunkLength, overlap } = req.body;
   
   // Remove excess whitespace from text
-  text = text.replace(/\s+/g, ' ')
+  text = text.replace(/\s+/g, ' ');
   // Parse text
   text = htp(text);
 
   // Create chunks
-  const chunks = sliding_window(text, chunkLength, overlap)
+  const chunks = sliding_window(text, chunkLength, overlap);
 
-  let embeddings = []
+  let embeddings = [];
   
   // Initialize transformer
   await import('@xenova/transformers').then(async ({ pipeline }) => {
@@ -44,15 +44,15 @@ const embed = async (req, res) => {
         pooling: 'mean',
         normalize: true,
       });
-      embedding = Object.values(embedding.data)
-      embeddings.push(embedding)
+      embedding = Object.values(embedding.data);
+      embeddings.push(embedding);
     }
     
     // Return embeddings and parsed text
     res.json({ embeddings, text });
   }).catch(err => {
-    res.status(500).json({"error": err})}
-  )
+    res.status(500).json({"error": err});
+  })
 };
 
 module.exports = embed;
