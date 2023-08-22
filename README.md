@@ -25,15 +25,15 @@ I added "blackboard" to the search query to ensure the script matches with email
 ## Server
 1. Clone repository
 2. Create a repository for the server
-3. Copy the server folder content
-4. Run the command in a terminal ```npm install && npm run start``` at the root directory of the repository you just created to test locally
-5. Follow this [tutorial](https://www.freecodecamp.org/news/how-to-deploy-nodejs-application-with-render/) to deploy server
+3. cd to the server folder
+4. Run this command in a terminal ```npm install && npm run start``` at the root directory of the repository you just created to test locally
+5. Follow this [tutorial](https://www.freecodecamp.org/news/how-to-deploy-nodejs-application-with-render/) to deploy server (Note: Type ```server``` in the ```Root Directory``` field)
 
 ## Google Scripts
 1. Go to [Google Scripts](https://script.google.com/)
 2. Click on the "New Project" button
-3. Copy any function of your choice from the [```Code.gs```](https://github.com/Tayomide/NLPGMail/blob/main/Code.gs) and paste it into the file
-4. Replace the ```'<INSERT YOUR SERVER URL LINK HERE>'``` with your server URL + endpoint. It should be something like this "https://example.com/embed"
+3. Copy any function of your choice from the [```Code.gs```](https://github.com/Tayomide/NLPGMail/blob/main/Code.gs) file and paste it into the file
+4. Replace the ```'<INSERT YOUR SERVER URL LINK HERE>'``` with your server URL + endpoint. It should look similar to this ```https://example.com/embed```
 5. Use the keys "Ctrl" + "S" to save
 6. Click on the dropdown at the top left to choose the function you want to run
 7. Click the "Run" button at the top left after selecting the function
