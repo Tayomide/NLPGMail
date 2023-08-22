@@ -1,8 +1,8 @@
 # NLPGMail
-An attempt at integrating NLP and Language theories in a real-world scenario.
+An attempt at integrating NLP and Language theories in real-world scenarios.
 
 # Note
-This is a one-day project I created to serve as a proof of concept of an idea I had earlier today in class.
+This started out as a [one-day project](https://github.com/Tayomide/NLPGMail/tree/one-day) I created to serve as a proof of concept of an idea I had in class.
 
 # Background
 "Genre refers to a conventional category of discourse based on large-scale typification of rhetorical action; as action, it acquires meaning from the situation and from the social context in which that situation arose" - Carolyn Miller.
@@ -24,10 +24,8 @@ I added "blackboard" to the search query to ensure the script matches with email
 
 ## Server
 1. Clone repository
-2. Create a repository for the server
-3. cd to the server folder
-4. Run this command in a terminal ```npm install && npm run start``` at the root directory of the repository you just created to test locally
-5. Follow this [tutorial](https://www.freecodecamp.org/news/how-to-deploy-nodejs-application-with-render/) to deploy server (Note: Type ```server``` in the ```Root Directory``` field)
+2. Run this command ```cd server && npm install && npm run start``` in a terminal at the root directory of the local repository you just cloned for testing
+3. Follow this [tutorial](https://www.freecodecamp.org/news/how-to-deploy-nodejs-application-with-render/) to deploy server (Note: Type ```server``` in the ```Root Directory``` field)
 
 ## Google Scripts
 1. Go to [Google Scripts](https://script.google.com/)
