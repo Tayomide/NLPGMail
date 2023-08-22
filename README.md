@@ -7,7 +7,7 @@ This is a one-day project I created to serve as a proof of concept of an idea I 
 # Background
 "Genre refers to a conventional category of discourse based on large-scale typification of rhetorical action; as action, it acquires meaning from the situation and from the social context in which that situation arose" - Carolyn Miller.
 
-Forms of genres can be seen all around us, from tags to labels. I believe the ability of a computer to understand us as a human could lead to the automation of most drudgery. This is my attempt to automate the labeling of emails, leading to an improved workflow, a more structured and tidy mail, a backing up of mail into folders, and much more without the need for manual labeling.
+Forms of genres can be seen all around us, from tags to labels. I believe the ability of a computer to understand language could lead to the automation of most drudgery. This is my attempt to automate the labeling of emails, leading to an improved workflow, a more structured and tidy mail, a backing up of mail into folders, and much more without the need for manual labeling.
 
 # Structure
 - The ```server``` folder is my node.js server that deals with the cleaning up, chunking, and embedding of Gmail messages
@@ -32,10 +32,11 @@ I added "blackboard" to the search query to ensure the script matches with email
 ## Google Scripts
 1. Go to [Google Scripts](https://script.google.com/)
 2. Click on the "New Project" button
-3. Copy any function of your choice and paste it into the file
-4. Use the keys "Ctrl" + "S" to save
-5. Click on the dropdown at the top left to choose the function you want to run
-6. Click the "Run" button at the top left after selecting the function
+3. Copy any function of your choice from the [```Code.gs```](https://github.com/Tayomide/NLPGMail/blob/main/Code.gs) and paste it into the file
+4. Replace the ```'<INSERT YOUR SERVER URL LINK HERE>'``` with your server URL + endpoint. It should be something like this "https://example.com/embed"
+5. Use the keys "Ctrl" + "S" to save
+6. Click on the dropdown at the top left to choose the function you want to run
+7. Click the "Run" button at the top left after selecting the function
 
 ### Note
 You could make the script run automatically at a time interval by clicking the clock icon at the left and then the "Add Trigger" floating action button at the bottom right.
