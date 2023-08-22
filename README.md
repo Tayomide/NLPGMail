@@ -22,11 +22,28 @@ I added "blackboard" to the search query to ensure the script matches with email
 
 # Steps to reproduce
 
+## Server
+1. Clone repository
+2. Create a repository for the server
+3. Copy the server folder content
+4. Run the command in a terminal ```npm install && npm run start``` at the root directory of the repository you just created to test locally
+5. Follow this [tutorial](https://www.freecodecamp.org/news/how-to-deploy-nodejs-application-with-render/) to deploy server
+
+## Google Scripts
+1. Go to [Google Scripts](https://script.google.com/)
+2. Click on the "New Project" button
+3. Copy any function of your choice and paste it into the file
+4. Use the keys "Ctrl" + "S" to save
+5. Click on the dropdown at the top left to choose the function you want to run
+6. Click the "Run" button at the top left after selecting the function
+
+### Note
+You could make the script run automatically at a time interval by clicking the clock icon at the left and then the "Add Trigger" floating action button at the bottom right.
 
 # Optimization
 There are several ways to optimize this script. Some of which I plan to implement in the future.
 - You can add more templates. The more templates, the less likely it is to miss a mail.
-- You could break out of the for loops when one label has been assigned. In most use cases one label is more than enough for a thread.
+- You could break out of the for loops when one label has been assigned. In most use cases, one label is more than enough for a thread.
 - You could reduce the threshold to increase the likelihood of labeling your mail and getting out of the loop. Although this may lead to unrelated emails being labeled if the threshold is too low. The threshold is currently at 0.65.
 
 # Plans for the future
