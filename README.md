@@ -11,7 +11,7 @@ Forms of genres can be seen all around us, from tags to labels. I believe the ab
 
 # Structure
 - The ```server``` folder is my node.js server that deals with the cleaning up, chunking, and embedding of Gmail messages
-- The ```Code.gs``` contains a function that works. Although it is a proof of concept. (I plan on adding more functions in the future, but you are welcome to fork or copy this code and create a pull request with your functions
+- The [```google script```](https://script.google.com/d/1H58ZZzO4FHyYkskSXbv8crMdN2EAXD7T6ierdAqmG7mYxdl1i2J1ezbL/edit?usp=sharing) contains the code needed.
 
 # Before/After
 ![Before Script Image](https://github.com/Tayomide/NLPGMail/blob/main/assets/images/before-script.png)
@@ -24,20 +24,31 @@ I added "blackboard" to the search query to ensure the script matches with email
 
 ## Server
 1. Clone repository
-2. Run this command ```cd server && npm install && npm run start``` in a terminal at the root directory of the local repository you just cloned for testing
+2. Run this command ```$ cd server && npm install && npm run start``` in a terminal at the root directory of the local repository you just cloned for testing
 3. Follow this [tutorial](https://www.freecodecamp.org/news/how-to-deploy-nodejs-application-with-render/) to deploy server (Note: Type ```server``` in the ```Root Directory``` field)
 
 ## Google Scripts
-1. Go to [Google Scripts](https://script.google.com/)
-2. Click on the "New Project" button
-3. Copy any function of your choice from the [```Code.gs```](https://github.com/Tayomide/NLPGMail/blob/main/Code.gs) file and paste it into the file
-4. Replace the ```'<INSERT YOUR SERVER URL LINK HERE>'``` with your server URL + endpoint. It should look similar to this ```https://example.com/embed```
+1. Go to [Google Scripts](https://script.google.com/d/1H58ZZzO4FHyYkskSXbv8crMdN2EAXD7T6ierdAqmG7mYxdl1i2J1ezbL/edit?usp=sharing)
+2. Click on the ```Overview``` button at the left navbar
+3. Click on the ```Copy icon``` beside the star at the right to get your own copy of the scripts
+4. Replace the ```'<INSERT YOUR SERVER URL LINK HERE>'``` in ```Utility Functions.gs``` line 5, with your server URL + endpoint. It should look similar to this ```https://example.com/embed```
 5. Use the keys "Ctrl" + "S" to save
-6. Click on the dropdown at the top left to choose the function you want to run
-7. Click the "Run" button at the top left after selecting the function
+6. Navigate to ```Code.gs```
+7. Click on the dropdown at the top left to choose the function you want to run
+8. Click the "Run" button at the top left after selecting the function
 
-### Note
-You could make the script run automatically at a time interval by clicking the clock icon at the left and then the "Add Trigger" floating action button at the bottom right.
+## Tips
+### For better labeling
+- Add shorter text.
+- Add a descriptive label.
+- Add more templates.
+- Make templates context-related.
+- Run the first function ```labelByClassificationAndClustering```.
+### For Automatic running / Labelling a large chunk of mail
+- Increase the ```messageLimits``` variable from the ``` Constants.gs ``` file.
+- Click the ```clock icon``` at the left and then the ```Add Trigger``` floating action button at the bottom right.
+- Change ```manualLabel``` variable in the ```Constants.gs``` file to true. This adds a label for manual labeling if the mail does not match any label
+- Change ```noLabel``` variable in the ```Constants.gs``` file to true. This ignores any mail with a user-assigned label. Coupled with ```manualLabel = true```, the code will not check the same mail twice.
 
 # Optimization
 There are several ways to optimize this script. Some of which I plan to implement in the future.
