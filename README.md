@@ -37,14 +37,14 @@ I added "blackboard" to the search query to ensure the script matches with email
 7. Click on the dropdown at the top left to choose the function you want to run
 8. Click the "Run" button at the top left after selecting the function
 
-## Tips
-### For better labeling
+# Tips
+## For better labeling
 - Add shorter text.
 - Add a descriptive label.
 - Add more templates.
 - Make templates context-related.
 - Run the first function ```labelByClassificationAndClustering```.
-### For Automatic running / Labelling a large chunk of mail
+## For Automatic running / Labelling a large chunk of mail
 - Increase the ```messageLimits``` variable from the ``` Constants.gs ``` file.
 - Click the ```clock icon``` at the left and then the ```Add Trigger``` floating action button at the bottom right.
 - Change ```manualLabel``` variable in the ```Constants.gs``` file to true. This adds a label for manual labeling if the mail does not match any label
@@ -54,7 +54,7 @@ I added "blackboard" to the search query to ensure the script matches with email
 There are several ways to optimize this script. Some of which I plan to implement in the future.
 - You can add more templates. The more templates, the less likely it is to miss a mail.
 - You could break out of the for loops when one label has been assigned. In most use cases, one label is more than enough for a thread.
-- You could reduce the threshold to increase the likelihood of labeling your mail and getting out of the loop. Although this may lead to unrelated emails being labeled if the threshold is too low. The threshold is currently at 0.65.
+- You could reduce the threshold to increase the likelihood of labeling your mail and getting out of the loop. However, this may lead to unrelated emails being labeled if the threshold is too low. The threshold is currently at 0.65.
 
 # Plans for the future
 This project is a step toward integrating NLP and language theory using existing technologies in the real world. I would love to see the extremes this project could be pushed to and hopefully collaborate with like-minded people.
