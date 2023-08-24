@@ -46,9 +46,9 @@ I added "blackboard" to the search query to ensure the script matches with email
 - Run the first function ```labelByClassificationAndClustering```.
 ## For Automatic running / Labelling a large chunk of mail
 - Increase the ```messageLimits``` variable from the ``` Constants.gs ``` file.
-- Click the ```clock icon``` at the left and then the ```Add Trigger``` floating action button at the bottom right.
 - Change ```manualLabel``` variable in the ```Constants.gs``` file to true. This adds a label for manual labeling if the mail does not match any label
 - Change ```noLabel``` variable in the ```Constants.gs``` file to true. This ignores any mail with a user-assigned label. Coupled with ```manualLabel = true```, the code will not check the same mail twice.
+- Click the ```clock icon``` at the left and then the ```Add Trigger``` floating action button at the bottom right, make configuration changes to fit your use case, and then click the ```Save``` button.
 
 # Optimization
 There are several ways to optimize this script. Some of which I plan to implement in the future.
