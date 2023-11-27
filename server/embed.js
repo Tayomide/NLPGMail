@@ -28,7 +28,6 @@ const embed = async (req, res) => {
   let { text, chunkLength, overlap } = req.body;
   
   // Remove excess whitespace from text
-  text = text.replace(/\s+/g, ' ');
   // Parse text
   text = htp(text);
 
@@ -36,29 +35,19 @@ const embed = async (req, res) => {
   const chunks = sliding_window(text, chunkLength, overlap);
 
   let embeddings = [];
-  
-  // Initialize transformer
-  await import('@xenova/transformers').then(async ({ pipeline }) => {
-    const generateEmbeddings = await pipeline(
-      'feature-extraction',
-      'Xenova/all-MiniLM-L6-v2'
-    );
 
-    // Generate embedding for individual chunk
-    for(const chunk of chunks){
-      let embedding = await generateEmbeddings(chunk, {
-        pooling: 'mean',
-        normalize: true,
-      });
-      embedding = Object.values(embedding.data);
-      embeddings.push(embedding);
-    }
-    
-    // Return embeddings and parsed text
-    res.json({ embeddings, text });
-  }).catch(err => {
-    res.status(500).json({"error": err});
-  })
+  // Generate embedding for individual chunk
+  for(const chunk of chunks){
+    let embedding = await generateEmbeddings(chunk, {
+      pooling: 'mean',
+      normalize: true,
+    });
+    embedding = Object.values(embedding.data);
+    embeddings.push(embedding);
+  }
+  
+  // Return embeddings and parsed text
+  res.json({ embeddings, text });
 };
 
 module.exports = embed;
