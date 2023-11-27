@@ -20,6 +20,10 @@ const sliding_window = (text, chunkLength = 250, overlap = 10) => {
 
 // Main function
 const embed = async (req, res) => {
+  if(!generateEmbeddings) {
+    await initialize();
+  }
+  generateEmbeddings = await generateEmbeddingsWrapper()
   // Get parameters
   let { text, chunkLength, overlap } = req.body;
   
