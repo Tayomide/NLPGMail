@@ -1,5 +1,7 @@
 // Gmail body sometimes contains html. Below module gets the text from html
 const htp = require('html2plaintext');
+const { initialize, generateEmbeddingsWrapper } = require("./embedService")
+let generateEmbeddings;
 
 // Function for splitting text into chunks with some overlap
 const sliding_window = (text, chunkLength, overlap) => {
