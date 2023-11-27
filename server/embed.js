@@ -6,7 +6,7 @@ let generateEmbeddings;
 // Function for splitting text into chunks with some overlap
 const sliding_window = (text, chunkLength = 250, overlap = 10) => {
   // I splitted by words. Does anyone know how to split by token?
-  const textList = text.replace(/\/[rs]/g, ' ').replace(/\s+/g, ' ').split(" ");
+  const textList = text.replace(/[^\w\s]/g, ' ').replace(/\s+/g, ' ').split(" ");
   const chunks = [];
 
   let startIdx = overlap;
