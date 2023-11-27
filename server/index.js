@@ -1,5 +1,3 @@
-// I would love to get feedback from my server. I am sure I made a lot of mistakes that just worked but will break in the future
-
 const express = require('express');
 
 const embed = require('./embed');
